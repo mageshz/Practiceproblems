@@ -193,6 +193,50 @@ public class Practice {
 		System.out.println("count is: "+count);
 	}
 
+	
+	public static void checkArmstrongNumber() {
+
+		//sum of cube of digits = number is armstrong number....1^3+5^3+3^3=153...//153 is armstrong number...
+		int number=153;
+		int originalNumber=number;		
+		int result=0;
+		while(number!=0) {
+			
+			int reminder=number%10;
+			result=result+reminder*reminder*reminder;
+			number=number/10;
+		}
+		if(originalNumber==result) {
+			System.out.println("It is armstrong number. "+originalNumber);
+		}else {
+			System.out.println("It is Not an armstrong number. "+originalNumber);
+
+		}
+	
+	}
+	
+	public static void secondLargestDigit() {
+
+	int number=236;
+	int largest=0;
+	int second_largest=0;
+	while(number!=0) {
+		
+		int digit=number%10;
+		if(digit>largest) {
+			second_largest=largest;
+			largest=digit;
+		}else if(digit>=second_largest) {
+			second_largest=digit;
+		}
+		number=number/10;
+		
+	}
+		System.out.println("The second Largest number is: "+second_largest);
+		
+	}
+	
+
 	public static void main(String[] args) {
 
 			printPattern(3);
@@ -206,5 +250,7 @@ public class Practice {
 			gcdHcfOfNumbersNonRecursive();
 			checkPrime();
 			generatePrimeNumbers();
+			checkArmstrongNumber();
+			secondLargestDigit();
 	}
 }
