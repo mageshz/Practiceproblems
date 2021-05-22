@@ -30,9 +30,54 @@ public static void printPattern(int n) {
 	}
 	
 }
+
+public static void bitWiseSubtraction() {
 	
+	int num1=20;
+	int num2=12;
+	int carry=0;
+
+	int twoscomplement=~num2+1;
+	
+	System.out.println("Subtraction is:"+(num1+twoscomplement));
+}
+	
+public static void bitWiseAddition() {
+	
+	int num1=2;
+	int num2=12;
+	int carry=0;
+	while(num2!=0) {
+		carry=num1&num2;
+		num1=num1^num2;
+		num2=carry<<1;
+	}
+	System.out.println("Addition is:"+num1);
+}
+
+public static void divisionWithoutOperator() {
+	
+	int num1=200;
+	int num2=2;
+	int div=0;
+	int rem=0;
+
+	while(num1 >= num2) {
+
+		num1=num1-num2;
+		div++;
+	}
+	rem=num1;
+	
+	System.out.println("Division is:"+div+" reminder is "+rem);
+}
+
 	public static void main(String[] args) {
 		
 			printPattern(3);
+			bitWiseAddition();
+			bitWiseSubtraction();
+			divisionWithoutOperator();
+		
 	}
 }
